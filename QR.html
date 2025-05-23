@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Código QR - Proyecto Comida Chatarra</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            text-align: center;
+            padding: 40px;
+        }
+        img {
+            border: 5px solid #8e44ad;
+            border-radius: 10px;
+            padding: 10px;
+            background-color: white;
+        }
+        button {
+            margin-top: 20px;
+            background-color: #8e44ad;
+            color: white;
+            padding: 10px 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #9b59b6;
+        }
+        p {
+            color: #555;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>📱 Escanea el Código QR</h1>
+
+    <img 
+        src="https://api.qrserver.com/v1/create-qr-code/?data=https://dazzling-squirrel-caeec8.netlify.app/&size=200x200" 
+        alt="Código QR del Proyecto Comida Chatarra"
+        id="codigoQR"
+    >
+
+    <br>
+    <button onclick="descargarQR()">Descargar QR</button>
+
+    <p>Puedes compartir esta página escaneando este código.</p>
+
+    <script>
+        function descargarQR() {
+            const link = document.createElement('a');
+            link.href = "https://api.qrserver.com/v1/create-qr-code/?data=https://dazzling-squirrel-caeec8.netlify.app/&size=200x200";
+            link.download = "codigo_qr_proyecto_comida.png";
+            link.click();
+        }
+    </script>
+
+</body>
+</html>
